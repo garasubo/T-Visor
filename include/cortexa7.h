@@ -1,0 +1,21 @@
+#ifndef __INCLUDED_CORTEXA7_H__
+#define __INCLUDED_CORTEXA7_H__
+
+#define IRQ_ID_PPI0 28
+#define IRQ_ID_PPI1 29
+#define IRQ_ID_PPI2 30
+#define IRQ_ID_PPI3 31
+#define IRQ_ID_PPI4 27
+#define IRQ_ID_PPI5 26
+#define IRQ_ID_PPI6 25
+
+#define IRQ_ID_LFIQ IRQ_ID_PPI0
+#define IRQ_ID_SPT IRQ_ID_PPI1
+#define IRQ_ID_NSPT IRQ_ID_PPI2
+#define IRQ_ID_LIRQ IRQ_ID_PPI3
+#define IRQ_ID_VT IRQ_ID_PPI4
+#define IRQ_ID_HT IRQ_ID_PPI5
+#define IRQ_ID_VMI IRQ_ID_PPI6
+
+
+#endif

@@ -1,0 +1,7 @@
+#ifndef __INCLUDED_SETTINGS_H__
+#define __INCLUDED_SETTINGS_H__
+
+#define RBTREE_NODE_POOL_NUM 1024
+#define RBTREE_NODE_ALLOC_NUM 32
+
+#endif

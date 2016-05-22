@@ -1,0 +1,25 @@
+#ifndef __INCLUDED_VIRTUAL_PSCI_H__
+#define __INCLUDED_VIRTUAL_PSCI_H__
+
+#include "board.h"
+
+#ifndef ARCH_PSCI_FN_IDS
+#define PSCI_FN_ID_CPU_SUSPEND 0x84000001
+#define PSCI_FN_ID_CPU_OFF     0x84000002
+#define PSCI_FN_ID_CPU_ON      0x84000003
+#endif
+
+#define PSCI_RET_SUCCESS 0
+#define PSCI_RET_NOT_SUPPORTED (-1)
+#define PSCI_RET_INVAL_ID_PARAMETERS (-2)
+#define PSCI_RET_DENIED (-3)
+#define PSCI_RET_ALREADY_ON (-4)
+#define PSCI_RET_ON_PENDING (-5)
+#define PSCI_RET_INTERNAL_FAILURE (-6)
+#define PSCI_RET_NOT_PRESENT (-7)
+#define PSCI_RET_DISABLED (-8)
+#define PSCI_RET_INVALID_ADDRESS (-9)
+
+UW virtual_psci(void);
+
+#endif

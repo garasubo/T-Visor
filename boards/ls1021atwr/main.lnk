@@ -1,0 +1,59 @@
+OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
+OUTPUT_ARCH(arm)
+ENTRY(_start)
+
+SECTIONS {
+    . = 0xb2000000;
+    _start = 0xb2000000;
+
+	.eitbra _start : {
+		*(.eitbra)
+		. = ALIGN(0x10);
+	}
+
+	.text : {
+        _text_start = .;
+		*(.text)
+        _text_end = .;
+	}
+
+	.rodata : {
+        _rodata_start = .;
+		*(.rodata)
+        _rodata_end = .;
+	}
+
+	.data : {
+        _data_start = .;
+		*(.data)
+        _data_end = .;
+	}
+
+	.bss : {
+		_bss_start = .;
+		*(.bss)
+		_bss_end = .;
+	}
+	. = ALIGN(0x8000);
+	_page_table_start = .;
+	_page_table_end = 0xb2800000;
+	. = _page_table_end;
+
+    . = ALIGN(0x10);
+    _hyp_stack_end = . + 0x200;
+    . = _hyp_stack_end;
+    _irq_stack_end = . + 0x100;
+    . = _irq_stack_end;
+    _stack_start = .;
+	.stack ALIGN(0x10) (NOLOAD) :{
+	}
+	_stack_end = 0xb4000000;
+    . = _stack_end;
+    _channel_area_start = .;
+    _channel_area_end = 0xb6000000;
+    . = _channel_area_end;
+    _log_area_start = .;
+    _log_area_end = 0xbe000000;
+
+	/DISCARD/ : { *(.note.gnu.build-id)}
+}
