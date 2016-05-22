@@ -17,6 +17,10 @@ wget https://gist.github.com/garasubo/3a60c509fffaedd058fd/raw/fe22497d93b6d4272
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make
 ```
 
+1. set up root file system in micro sd card.
+
+1. insert micro sd card in cubieboard2
+
 1. get dtb file
 ```
 wget https://gist.github.com/garasubo/bf0acefc5a367fe5e594/raw/00078dcb7b5fda5ad0bf689c7cbc4d295f643788/dtb_virt.dts
